@@ -12,7 +12,7 @@ await $`git merge --ff main`.printCommand()
 // build and commit the dist files.
 await $`npm ci`.printCommand()
 await $`npm run compile`.printCommand()
-await $`git add -f dist && git commit -m "chore: release {{ versionName }}"`.printCommand()
+await $`git add -f dist && git commit -m "chore: release ${input.nextVersionName}"`.printCommand()
 
 // push the dist files to the 'latest' branch.
 if (input.testMode) {
